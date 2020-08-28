@@ -96,10 +96,8 @@ AUTHENTICATION_BACKENDS = (
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'food_app',
-        'USER' : 'root',
-        'PASSWORD' : 'root@123',
     }
 }
 

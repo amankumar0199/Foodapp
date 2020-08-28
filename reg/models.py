@@ -8,7 +8,7 @@ from django.urls import reverse
 # Create your models here.
 
 class Post(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="user_post")
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="user_post", on_delete = models.CASCADE)
     name = models.CharField(max_length=30)
     FOOD_CHOICES = (
         ('0', 'RAW'),

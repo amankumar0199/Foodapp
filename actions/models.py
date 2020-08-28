@@ -5,13 +5,14 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 
 # Create your models here.
 class Action(models.Model):
-	user = models.ForeignKey(User, related_name='actions', db_index=True)
+	user = models.ForeignKey(User, related_name='actions', db_index=True, on_delete = models.CASCADE)
 
 	verb = models.CharField(max_length=255)
 	target_ct = models.ForeignKey(ContentType,
 								  blank=True,
 								  null=True,
-								  related_name='target_obj')
+								  related_name='target_obj',
+                                      on_delete = models.CASCADE)
 	target_id = models.PositiveIntegerField(null=True,
 											blank=True,
 											db_index=True)
